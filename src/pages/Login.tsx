@@ -78,7 +78,7 @@ const Login = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Health Buddy AI
+            Welcome to Wellzo
           </div>
           <h1 className="text-3xl font-bold text-foreground mb-2">
             Welcome Back
