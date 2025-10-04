@@ -67,7 +67,7 @@ const Login = () => {
         variant="ghost"
         onClick={() => {
           // Navigate to home, but if not authenticated, user will be redirected back to login
-          navigate('/');
+          navigate('/home');
         }}
         className="absolute top-4 left-4"
       >
