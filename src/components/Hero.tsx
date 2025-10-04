@@ -7,12 +7,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left: Content */}
         <div className="space-y-6">
           <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
-            Welcome to HealthCare MVP
+            Welcome to Wellzo
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -45,7 +45,7 @@ const Hero = () => {
         <div className="relative">
           <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80" 
+              src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80"
               alt="Healthcare professional"
               className="rounded-2xl object-cover w-full h-full"
             />

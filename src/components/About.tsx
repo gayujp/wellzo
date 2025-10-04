@@ -29,7 +29,7 @@ const About = () => {
     <section id="about" className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">About HealthCare MVP</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">About Wellzo</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Revolutionizing healthcare access through innovative technology and compassionate care
           </p>
@@ -79,15 +79,15 @@ const About = () => {
             </p>
             <div className="flex justify-center gap-8 text-center">
               <div>
-                <p className="text-3xl font-bold text-primary">10,000+</p>
+                <p className="text-3xl font-bold text-primary">10+</p>
                 <p className="text-sm text-muted-foreground">Active Users</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary">500+</p>
+                <p className="text-3xl font-bold text-primary">1</p>
                 <p className="text-sm text-muted-foreground">Verified Doctors</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-primary">50,000+</p>
+                <p className="text-3xl font-bold text-primary">50+</p>
                 <p className="text-sm text-muted-foreground">Appointments Booked</p>
               </div>
             </div>

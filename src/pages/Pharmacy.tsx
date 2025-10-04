@@ -8,43 +8,33 @@ import { Badge } from '@/components/ui/badge';
 const mockPharmacies = [
   {
     id: 1,
-    name: 'MedPlus Pharmacy',
-    address: '123 Main Street, Downtown',
-    distance: '1.2 km',
+    name: 'Apollo Pharmacy',
+    address: 'Kalletumakara, Irinjalakuda,Kerala,680683',
+    distance: '4 km',
     isOpen: true,
     hours: '8:00 AM - 10:00 PM',
     phone: '+91 98765 11111',
-    mapsLink: 'https://maps.google.com'
+    mapsLink: 'https://maps.app.goo.gl/bSJbMWr3cfLVbV8HA?g_st=ipc'
   },
   {
     id: 2,
-    name: 'Apollo Pharmacy',
-    address: '456 Park Avenue, Central',
-    distance: '2.5 km',
+    name: 'Aster Pharmacy',
+    address: 'Chadankunnu junction, irinjalakuda, kerala,680683',
+    distance: '11 km',
     isOpen: true,
     hours: '24/7',
     phone: '+91 98765 22222',
-    mapsLink: 'https://maps.google.com'
+    mapsLink: 'https://maps.app.goo.gl/XQV6DsP7vN2e6eiG9?g_st=ic'
   },
   {
     id: 3,
-    name: 'HealthCare Pharmacy',
-    address: '789 Market Road, Westside',
+    name: 'Kottakal Aryavaidyasala Pharmacy',
+    address: 'Kalletumakara, Irinjalakuda,Kerala,680683',
     distance: '3.8 km',
     isOpen: false,
     hours: '9:00 AM - 9:00 PM',
     phone: '+91 98765 33333',
-    mapsLink: 'https://maps.google.com'
-  },
-  {
-    id: 4,
-    name: 'Wellness Pharmacy',
-    address: '321 Lake View, Eastside',
-    distance: '4.5 km',
-    isOpen: true,
-    hours: '8:00 AM - 11:00 PM',
-    phone: '+91 98765 44444',
-    mapsLink: 'https://maps.google.com'
+    mapsLink: 'https://maps.app.goo.gl/EQEKxkpvVftkHBCz6?g_st=ic'
   }
 ];
 

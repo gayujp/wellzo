@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   Home, 
   User, 
@@ -15,16 +16,45 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const menuItems = [
-  { path: '/', icon: Home, label: 'Home' },
-  { path: '/profile', icon: User, label: 'Profile' },
-  { path: '/services', icon: Stethoscope, label: 'Services' },
-  { path: '/chatbot', icon: Bot, label: 'AI Chatbot' },
-  { path: '/faqs', icon: HelpCircle, label: 'FAQs' },
-  { path: '/about', icon: Info, label: 'About' },
+interface MenuItem {
+  type: 'scroll' | 'route';
+  target?: string;
+  path?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+}
+
+const menuItems: MenuItem[] = [
+  { type: 'scroll', target: 'hero', icon: Home, label: 'Home' },
+  { type: 'route', path: '/profile', icon: User, label: 'Profile' },
+  { type: 'scroll', target: 'services', icon: Stethoscope, label: 'Services' },
+  { type: 'route', path: '/chatbot', icon: Bot, label: 'AI Chatbot' },
+  { type: 'scroll', target: 'faqs', icon: HelpCircle, label: 'FAQs' },
+  { type: 'scroll', target: 'about', icon: Info, label: 'About' },
 ];
 
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+  const navigate = useNavigate();
+
+  const handleMenuClick = (item: MenuItem) => {
+    onClose();
+    
+    if (item.type === 'scroll') {
+      // For scroll items, first navigate to home page, then scroll to section
+      navigate('/');
+      // Use setTimeout to ensure the page loads before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(item.target!);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else if (item.type === 'route') {
+      // Navigate to different page
+      navigate(item.path!);
+    }
+  };
+
   return (
     <>
       {/* Overlay */}
@@ -49,22 +79,15 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         </div>
         
         <nav className="p-4 space-y-2">
-          {menuItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                  isActive
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:bg-accent'
-                }`
-              }
+          {menuItems.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => handleMenuClick(item)}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors hover:bg-accent w-full text-left"
             >
               <item.icon className="h-5 w-5" />
               <span>{item.label}</span>
-            </NavLink>
+            </button>
           ))}
         </nav>
       </aside>
